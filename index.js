@@ -5,8 +5,6 @@ let guestScore = 0;
 let homeEl = document.getElementById("home-el");
 let guestEl = document.getElementById("guest-el");
 
-console.log(homeEl)
-
 function add1Home() {
     homeScore += 1;
     homeScoreEl.textContent = homeScore;
@@ -43,6 +41,14 @@ function add3Guest() {
     highlightLeader();
 }
 
+function newGame() {
+    homeScore = 0;
+    guestScore = 0;
+    homeScoreEl.textContent = homeScore;
+    guestScoreEl.textContent = guestScore;  
+    highlightLeader();  
+}
+
 function highlightLeader() {
     homeEl.classList.remove("green-text", "white-text");
     guestEl.classList.remove("green-text", "white-text");
@@ -56,14 +62,4 @@ function highlightLeader() {
         homeEl.classList.add("white-text");
         guestEl.classList.add("white-text");
     }
-}
-
-
-
-function newGame() {
-    homeScore = 0;
-    guestScore = 0;
-    homeScoreEl.textContent = homeScore;
-    guestScoreEl.textContent = guestScore;  
-    highlightLeader();  
 }
